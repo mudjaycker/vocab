@@ -1,0 +1,26 @@
+{% extends 'vocapp/main.html' %}
+{% block content %}
+{% load widget_tweaks %}
+<div class="hero-body">
+    <div class="content">
+        <form method="post">
+            {% csrf_token %}
+            <div class="notification is-third-color">
+                <div class="field"><label for="" class="label" style="color: aliceblue;">Username</label></div>
+                <div class="control">{% render_field form.username placeholder="choose a username" class+="input" %}</div>
+
+                <div class="field"><label for="" class="label" style="color: aliceblue;">Password</label></div>
+                <div class="control">{% render_field form.password1 placeholder="must have at least 8 chars" class+="input" %}</div>
+                <div class="field"><label for="" class="label" style="color: aliceblue;">Confirm Password</label></div>
+                <div class="control">{% render_field form.password1 placeholder="must have at least 8 chars" class+="input" %}</div>
+
+
+                <input class="button is-warning is-outlined my-4" type="submit" value="Sign in">
+            </div>
+        </form>
+        <p>Already have an account? <a class="auth-link" href="{% url 'login' %}">Log in Here</a></p>
+    </div>
+</div>
+
+
+{% endblock content %}
