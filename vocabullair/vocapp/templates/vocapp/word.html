@@ -1,5 +1,23 @@
 {% extends 'vocapp/main.html' %}
 {% block content %}
-<h1>word: {{word}}</h1>
-<h2>{{word.sense}}</h2>
+
+
+<div class="content">
+    <div class="card">
+        <header class="card-header">
+            <p class="card-header-title">
+                {{word}}
+            </p>
+        </header>
+        <div class="card-content is-warning">
+            <div class="content">
+                <p>{{word.sense}}</p>
+                <br>
+                <time datetime="2016-1-1">{{word.created}}</time>
+            </div>
+        </div>
+    
+    </div>
+</div>
+
 {% endblock content %}
